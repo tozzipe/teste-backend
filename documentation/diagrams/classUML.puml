@@ -1,0 +1,41 @@
+@startuml
+
+class USER {
+  + id: int
+  + userId: int
+  + username: string
+  + email: string
+  + password: string
+}
+
+class WALLET {
+  + id: int
+  + walletId: int
+}
+
+class COIN {
+  + id: int
+  + coin: string
+  + balance: float
+}
+
+class OFFER {
+  + id: int
+  + offerId: int
+  + walletId: int
+  + ammount: float
+}
+
+class FAVORITE {
+  + id: int
+  + userId: int
+  + offerId: int
+}
+
+USER "1" -- "1" WALLET
+WALLET "1" -- "N" COIN
+COIN "1" -- "1" OFFER
+USER "1" -- "N" OFFER
+USER "1" -- "N" FAVORITE
+
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+
+start
+:Usuário (USER) acessa a plataforma;
+:Usuário consulta todas as ofertas (OFFER);
+:Plataforma exibe todas as ofertas;
+if (Usuário se interessa por oferta?) then (Sim)
+  :Usuário favorita (FAVORITE) a oferta;
+  :Plataforma atualiza o status da oferta para favorite: true;
+else (Não)
+  :Usuário não favorita a oferta;
+endif
+:Usuário cria uma oferta de moeda (COIN);
+if (Saldo da moeda disponível?) then (Sim)
+  :Verifica se a oferta é menor ou igual ao saldo;
+  if (Sim) then
+    :Usuário cria a oferta;
+  else (Não)
+    :Exibe mensagem de erro;
+    stop
+  endif
+else (Não)
+  :Exibe mensagem de erro;
+  stop
+endif
+:Plataforma registra a oferta;
+:Usuário pode excluir sua oferta;
+:Plataforma remove a oferta;
+:Usuário consulta todas as ofertas;
+:Plataforma exibe todas as ofertas;
+:Plataforma marca ofertas favoritadas como "favorite: true";
+stop
+
+@enduml

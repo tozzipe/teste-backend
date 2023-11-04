@@ -1,0 +1,20 @@
+@startuml
+
+actor User
+participant "API" as API
+database Wallet
+database Offers
+
+User -> API: Consulta carteira
+API -> Wallet: Consulta saldo da carteira
+User -> API: Consulta ofertas disponíveis
+API -> Offers: Consulta ofertas
+User -> API: Favorita oferta
+API -> Offers: Favorita oferta
+User -> API: Cria oferta
+API -> Offers: Cria oferta
+User -> API: Exclui oferta
+API -> Offers: Exclui oferta
+
+
+@enduml
