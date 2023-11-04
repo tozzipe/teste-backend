@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     build: .
-    command: npm start
+    command: bash -c "npm install && npx sequelize db:migrate && npx sequelize db:seed:all && npm start"
     ports:
       - '3000:3000'
     volumes:
@@ -21,7 +21,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     ports:
-      - '3306:3306'  # Corrigido para usar a porta diretamente
+      - '3306:3306' 
 
 volumes:
   db:

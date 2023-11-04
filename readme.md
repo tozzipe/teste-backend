@@ -64,6 +64,21 @@ O comando acima irá realizar as seguintes tarefas:
 - [x] Executar as seeds no BD, criando uma carga inicial de dados
 - [x] Startar a aplicação <code>http://localhost:3000/</code>.
 
+### Em caso de erro no script para rodar o Back End (servidor)
+
+```bash
+# acesse o repo 
+$ cd teste-back
+
+# Rode as migrations manualmente
+$ npx sequelize db:migrate
+
+# Rode as seeds manualmente
+$ npx sequelize db:seed:all
+
+# reinicie a aplicação no docker
+```
+
 
 ### Documentação da API
 
