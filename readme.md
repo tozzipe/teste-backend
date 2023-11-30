@@ -46,7 +46,7 @@ Para rodar a aplicação:
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/tozzipe/teste-backend/>
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd teste-back
